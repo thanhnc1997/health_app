@@ -53,7 +53,7 @@ async function home_page(params = {}) {
 				<figcaption><img src="assets/images/main_photo_text.png"></figcaption>	
 			</figure>
 			<div class="right">
-				
+				<canvas id="home_chart"></canvas>
 			</div>
 		</div>
 		`;
@@ -107,9 +107,46 @@ async function home_page(params = {}) {
 		});
 	}
 	
+	async function load_chart() {
+
+		const labels = [1, 2, 3, 4, 5, 6, 7];
+		const data = {
+			labels: labels,
+			datasets: [
+				{
+					data: [65, 59, 80, 81, 56, 55, 40],
+					borderColor: '#1266f1',
+          backgroundColor: '#1266f1',
+				},
+				{
+					data: [25, 49, 180, 41, 26, 55, 60],
+					borderColor: '#f93154',
+          backgroundColor: '#f93154',
+				}
+			]
+		};
+		const config = {
+			type: 'line',
+			data: data,
+			options: {
+				responsive: true,
+				plugins: {
+					legend: {
+						display: false,
+					},
+					title: {
+						display: true,
+					}
+				}
+			},
+		};
+		new Chart(template.querySelector('#home_chart'), config);
+	}
+	
 	template.appendChild(await banner());
 	template.appendChild(await nav_tab());
 	await load_product(products);
+	await load_chart();
 	
 	return template;
 }
