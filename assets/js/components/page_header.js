@@ -8,36 +8,24 @@ function page_header() {
 	div.classList.add('header');
 	div.innerHTML = `
 	<div class="container">
-		<div class="header-top">
-			<a href="/" class="logo">
-				<img src="assets/images/logo.png" alt="">
-			</a>
-			<div>
-				<button type="button" class="mobile-nav-trigger">
-					${render_icon.hamburger()}
-				</button>
-				<button type="button" class="search-page">
-					${render_icon.search()}
-				</button>
-				<button type="button" class="cart">
-					${render_icon.bag()}
-					<span>(0)</span>
-				</button>
-			</div>
-		</div>
+		<a href="/" class="logo">
+			<img src="assets/images/logo.svg" alt="">
+		</a>
 		<nav class="main-nav">
-			<a href="/" class="logo">
-				<img src="images/logo.png" alt="">
+			<a href="/my-record">
+				${render_icon.memo({width: 26})}<span>自分の記録</span>
 			</a>
-			<a href="/c">Nam</a>
-			<a href="/c">Nữ</a>
-			<a href="/c">Sale</a>
-			<a href="#">get the look</a>
-			<button type="button">${render_icon.close()}</button>
+			<a href="#">
+				${render_icon.challenge({width: 26})}<span>チャレンジ</span>
+			</a>
+			<a href="/article">
+				${render_icon.info({width: 26})}<span>お知らせ</span>
+			</a>
+			<button type="button">${render_icon.hamburger({width: 26})}</button>
 		</nav>
 	</div>
 	`;
-	
+	/*
 	let overlay = create_element('div');
 	overlay.classList.add('overlay');
 	div.querySelector('.mobile-nav-trigger').addEventListener('click', () => {
@@ -67,7 +55,7 @@ function page_header() {
 			})
 		});
 	}
-	
+	*/
 	return div;
 }
 

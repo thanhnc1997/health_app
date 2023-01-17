@@ -1,245 +1,115 @@
 import {
 	create_element,
-	change_currency
+	render_icon
 } from '../helper.js';
 
 async function home_page(params = {}) {
 	let template = create_element('div');
-	let female_product = [
+	const products = [
 		{
-			id: 'nl-123',
-			name: 'uni tee',
-			price: 100000,
-			sale_price: '',
-			image: 'assets/images/uni-tee.jpg',
-			size: [0, 1, 2, 3]
+			id: 1,
+			name: '05.21.Morning',
+			image: '/assets/images/1.png'
 		},
 		{
-			id: 'nl-456',
-			name: 'hen dress',
-			price: 150000,
-			sale_price: '',
-			image: 'assets/images/hen-dress.jpg',
-			size: [0, 1, 2, 3]
+			id: 2,
+			name: '05.21.Lunch',
+			image: '/assets/images/2.png'
 		},
 		{
-			id: 'nl-789',
-			name: 'feth jacket',
-			price: 420000,
-			sale_price: 350000,
-			image: 'assets/images/feth-jacket.jpg',
-			size: [0, 1, 2, 3]
+			id: 3,
+			name: '05.21.Dinner',
+			image: '/assets/images/3.png'
 		},
 		{
-			id: 'nl-101',
-			name: 'cozy sweat shirt',
-			price: 150000,
-			sale_price: '',
-			image: 'assets/images/cozy-sweat.jpg',
-			size: [0, 1, 2, 3]
-		}
-	];
-	let male_product = [
-		{
-			id: 'nl-123',
-			name: 'lech shirt',
-			price: 100000,
-			sale_price: '',
-			image: 'assets/images/lech-shirt.jpg',
-			size: [0, 1, 2, 3, 4]
+			id: 4,
+			name: '05.21.Snack',
+			image: '/assets/images/4.png'
 		},
 		{
-			id: 'nl-456',
-			name: 'high tee',
-			price: 150000,
-			sale_price: 120000,
-			image: 'assets/images/high-tee.jpg',
-			size: [0, 1, 2, 3, 4]
+			id: 5,
+			name: '05.21.Lunch',
+			image: '/assets/images/5.png'
 		},
 		{
-			id: 'nl-789',
-			name: 'moment tee',
-			price: 420000,
-			sale_price: '',
-			image: 'assets/images/moment-tee.jpg',
-			size: [0, 1, 2, 3, 4]
+			id: 6,
+			name: '05.21.Dinner',
+			image: '/assets/images/6.png'
 		},
 		{
-			id: 'nl-101',
-			name: 'cozy coat',
-			price: 150000,
-			sale_price: '',
-			image: 'assets/images/cozy-coat.jpg',
-			size: [0, 1, 2, 3, 4]
-		}
-	];
+			id: 7,
+			name: '05.21.Snack',
+			image: '/assets/images/7.png'
+		},
+	]
 	
 	async function banner() {
 		let div = create_element('section');
+		div.classList.add('section-banner');
 		div.innerHTML = `
-		<div class="container grid-row banner-row">
+		<div class="grid-row banner-row">
 			<figure class="left">
-				<div style="background-image: url(assets/images/h1-1.jpg)"></div>
-				<figcaption>
-					<p class="title">"great life" collection</p>
-					<button class="btn" type="button">xem chi tiết</button>
-				</figcaption>
+				<div style="background-image: url(assets/images/main_photo.png)"></div>
+				<figcaption><img src="assets/images/main_photo_text.png"></figcaption>	
 			</figure>
-			<figure class="right" style="background-image: url(assets/images/h1-2.jpg)"></figure>
-		</div>
-		`;
-		
-		return div;
-	}
-	
-	async function new_arrival() {
-		let div = create_element('section');
-		div.innerHTML = `
-		<div class="container">
-			<h4 class="text-center title mb-25">
-				new arrival 
-			</h4>
-			<div class="grid-row product-row"></div>
-		</div>
-		`;
-		female_product.map(product => {
-			let price = ``,
-					sale_percent = 0;
-			if (product.sale_price) {
-				price = `
-				<span class="old-price">${change_currency(product.price)}</span>
-				<span>${change_currency(product.sale_price)}</span>`
-				;
-				sale_percent = 100 - parseInt(product.price / product.sale_price * 100);
-			}
-			else {
-				price = change_currency(product.price)
-			}
-			let item = create_element('div');
-			item.setAttribute('data-id', product.id);
-			item.classList.add('item');
-			item.innerHTML = `
-			${product.sale_price ? `<span class="sale">${sale_percent}%</span>` : ''}
-			<div class="image cursor-pointer" style="background-image: url(${product.image})"></div>
-			<div class="detail">
-				<p class="name">${product.name}</p>
-				<p class="price">${price} VND</p>
-				<p class="mb-5">2 màu</p>
-				<p class="size">
-					<span>size:</span>
-					${
-					product.size.map(size => {
-						return `<span>${size}</span>`
-					}).join('')
-					}
-				</p>
-			</div>
-			`;
-			div.querySelector('.product-row').appendChild(item);
-		});
-		
-		return div;
-	}
-	
-	async function promotion() {
-		let div = create_element('section');
-		div.innerHTML = `
-		<div class="container section-promotion">
-			<figure>
-				<img src="assets/images/ban_nhieu.jpg">
-			</figure>
-		</div>
-		`;
-		
-		return div;
-	}
-	
-	async function product() {
-		let div = create_element('section');
-		div.innerHTML = `
-		<div class="container">
-			<h4 class="title text-center mb-25">
-				what to wear?
-			</h4>
-			<div class="grid-row product-row wtw">
+			<div class="right">
 				
 			</div>
 		</div>
 		`;
-		male_product.map(product => {
-			let price = ``,
-					sale_percent = 0;
-			if (product.sale_price) {
-				price = `
-				<span class="old-price">${change_currency(product.price)}</span>
-				<span>${change_currency(product.sale_price)}</span>`
-				;
-				sale_percent = 100 - parseInt(product.price / product.sale_price * 100);
-			}
-			else {
-				price = change_currency(product.price)
-			}
-			let item = create_element('div');
-			item.setAttribute('data-id', product.id);
-			item.classList.add('item');
-			item.innerHTML = `
-			${product.sale_price ? `<span class="sale">${sale_percent}%</span>` : ''}
-			<div class="image cursor-pointer" style="background-image: url(${product.image})"></div>
-			<div class="detail">
-				<p class="name">${product.name}</p>
-				<p class="price">${price} VND</p>
-				<p class="mb-5">2 màu</p>
-				<p class="size">
-					<span>size:</span>
-					${
-					product.size.map(size => {
-						return `<span>${size}</span>`
-					}).join('')
-					}
-				</p>
-			</div>
-			`;
-			div.querySelector('.product-row').appendChild(item);
-		});
 		
 		return div;
 	}
 	
-	async function get_the_look () {
+	async function nav_tab() {
 		let div = create_element('section');
 		div.innerHTML = `
-		<div class="container container-md">
-			<h4 class="title">get the look</h4>
-			<div class="grid-row get-the-look">
-				<div class="item" style="background-image: url(assets/images/gtl-5.jpg)">
-					<!-- <span class="title">xem chi tiết</span> -->
-				</div>
-				<div class="item" style="background-image: url(assets/images/gtl-1.jpg)">
-					<!-- <span class="title">xem chi tiết</span> -->
-				</div>
-				<div class="item" style="background-image: url(assets/images/gtl-2.jpg)">
-					<!-- <span class="title">xem chi tiết</span> -->
-				</div>
-				<div class="item" style="background-image: url(assets/images/gtl-3.jpg)">
-					<!-- <span class="title">xem chi tiết</span> -->
-				</div>
-				<div class="item" style="background-image: url(assets/images/gtl-4.jpg)">
-					<!-- <span class="title">xem chi tiết</span> -->
-				</div>
+		<div class="container">
+			<nav class="nav-tab">
+				<span class="nav-item">
+					${render_icon.knife({width: 56})}
+					<span>Morning</span>
+				</span>
+				<span class="nav-item">
+					${render_icon.knife({width: 56})}
+					<span>Lunch</span>
+				</span>
+				<span class="nav-item">
+					${render_icon.knife({width: 56})}
+					<span>Dinner</span>
+				</span>
+				<span class="nav-item">
+					${render_icon.coffee({width: 38})}
+					<span>Snack</span>
+				</span>
+			</nav>
+			<div class="tab-content grid-row four-column-md mb-30">
+				
 			</div>
-			<br>
-			<p class="title">#keyclothes</p>
+			<a href="#" class="btn">記録をもっと見る</a>
 		</div>
 		`;
 		
 		return div;
 	}
 	
+	async function load_product(data) {
+		data.map(product => {
+			let item = create_element('div');
+			item.classList.add('product-item');
+			item.innerHTML = `
+			<div class="image" style="background-image: url(${product.image})">
+				<span class="name">${product.name}</span>
+			</div>
+			`;
+			
+			template.querySelector('.tab-content').appendChild(item);
+		});
+	}
+	
 	template.appendChild(await banner());
-	template.appendChild(await new_arrival());
-	template.appendChild(await promotion());
-	template.appendChild(await product());
-	template.appendChild(await get_the_look());
+	template.appendChild(await nav_tab());
+	await load_product(products);
 	
 	return template;
 }

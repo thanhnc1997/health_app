@@ -1,6 +1,6 @@
 module.exports = {
   html(params = {}) {
-    let title = `Bán hàng miễn phí`;
+    let title = `Health app`;
     let description = ``;
     return `
     <!DOCTYPE html>
@@ -11,16 +11,15 @@ module.exports = {
       <title>${params.title || title}</title>
       <meta name="description" content="${description}" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" integrity="sha512-BnbUDfEUfV0Slx6TunuB042k9tuKe3xrD6q4mg5Ed72LTgzDIcLPxg6yI2gcMFRyomt+yJJxE+zJwNmxki6/RA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <!-- <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/logo.png"> -->
-			<link rel="preconnect" href="https://fonts.googleapis.com">
-			<link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Khand:wght@500&family=Noto+Sans&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 			<link rel="stylesheet" href="/assets/css/main.css">
     </head>
     <body>
       <main></main>
 			
+      <script src="/assets/libs/js/chart.min.js"></script>
       <script type="module" src="/assets/js/main.js"></script>
     </body>
     </html>
