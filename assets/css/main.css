@@ -4,6 +4,13 @@
   line-height: 1.4;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
+  *::-webkit-scrollbar {
+    width: 6px; }
+  *::-webkit-scrollbar-track {
+    background: #777; }
+  *::-webkit-scrollbar-thumb {
+    background: #FFCC21;
+    border-radius: 10px; }
 
 html,
 body {
@@ -12,16 +19,6 @@ body {
   line-height: 1.4;
   letter-spacing: 1px;
   color: #414141; }
-  html::-webkit-scrollbar,
-  body::-webkit-scrollbar {
-    width: 5px; }
-  html::-webkit-scrollbar-track,
-  body::-webkit-scrollbar-track {
-    background: transparent; }
-  html::-webkit-scrollbar-thumb,
-  body::-webkit-scrollbar-thumb {
-    background: #e4e3e5;
-    border-radius: 0; }
 
 h1,
 h2,
@@ -143,6 +140,9 @@ hr {
 
 .cursor-pointer {
   cursor: pointer; }
+
+.bg-dark {
+  background: #414141; }
 
 .title {
   letter-spacing: 3px;
@@ -335,34 +335,117 @@ hr {
 .section-banner {
   background: #2e2e2e; }
 
-.product-page {
-  padding: 56px 0 0; }
-  .product-page .filter {
-    grid-gap: 32px;
-    margin-bottom: 56px; }
-    .product-page .filter div {
-      background: #414141;
-      padding: 22px;
-      text-align: center;
-      cursor: pointer; }
-    .product-page .filter p {
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      font-size: 22px;
-      text-transform: uppercase;
-      color: #FFCC21;
-      position: relative; }
-      .product-page .filter p::after {
-        content: '';
-        display: block;
-        width: 56px;
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translate(-50%, 0);
-        border-top: 1px solid #fff; }
-    .product-page .filter span {
-      font-size: 18px;
-      color: #fff; }
+.page {
+  padding: 56px 0; }
+
+.about-page .section-title {
+  font-size: 22px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center; }
+  .about-page .section-title span {
+    font-size: 15px;
+    margin-right: 42px; }
+.about-page .filter {
+  margin-bottom: 56px;
+  grid-gap: 48px; }
+  .about-page .filter .item {
+    padding-top: calc(100% - 48px);
+    border: 24px solid #FFCC21;
+    position: relative;
+    background: #414141 no-repeat center;
+    background-size: cover; }
+    .about-page .filter .item .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%; }
+      .about-page .filter .item .text span,
+      .about-page .filter .item .text button {
+        display: block; }
+      .about-page .filter .item .text span {
+        color: #FFCC21;
+        font-size: 25px;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        text-align: center; }
+      .about-page .filter .item .text button {
+        border: 0;
+        width: 160px;
+        background: #FF963C;
+        color: #fff;
+        padding: 4px;
+        margin: auto; }
+.about-page .body-record,
+.about-page .exercise {
+  margin-bottom: 56px;
+  background: #414141;
+  color: #fff;
+  padding: 16px 24px; }
+.about-page .exercise .list {
+  height: 190px;
+  overflow: auto;
+  padding-right: 24px; }
+  .about-page .exercise .list div.grid-row {
+    grid-gap: 8px 40px; }
+  .about-page .exercise .list .item {
+    padding: 0 0 8px 24px;
+    position: relative;
+    border-bottom: 1px solid #777; }
+    .about-page .exercise .list .item::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 0;
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #fff; }
+    .about-page .exercise .list .item .name,
+    .about-page .exercise .list .item .burn {
+      font-size: 15px; }
+    .about-page .exercise .list .item time,
+    .about-page .exercise .list .item .burn {
+      color: #FFCC21; }
+    .about-page .exercise .list .item time {
+      font-size: 18px; }
+.about-page .diary .item {
+  border: 2px solid #707070;
+  padding: 16px; }
+  .about-page .diary .item h4 {
+    font-size: 18px;
+    margin-bottom: 8px; }
+  .about-page .diary .item p {
+    font-size: 12px; }
+
+.product-page .filter {
+  grid-gap: 32px;
+  margin-bottom: 56px; }
+  .product-page .filter div {
+    background: #414141;
+    padding: 22px;
+    text-align: center;
+    cursor: pointer; }
+  .product-page .filter p {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #FFCC21;
+    position: relative; }
+    .product-page .filter p::after {
+      content: '';
+      display: block;
+      width: 56px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-top: 1px solid #fff; }
+  .product-page .filter span {
+    font-size: 18px;
+    color: #fff; }
 
 /*# sourceMappingURL=main.css.map */

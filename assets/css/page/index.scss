@@ -2,8 +2,121 @@
 	background: #2e2e2e;
 }
 
+.page {
+	padding: 56px 0;
+}
+
+.about-page {
+	.section-title {
+		font-size: 22px;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+		span {
+			font-size: 15px;
+			margin-right: 42px;
+		}
+	}
+	.filter {
+		margin-bottom: 56px;
+		grid-gap: 48px;
+		.item {
+			padding-top: calc(100% - 48px);
+			border: 24px solid #FFCC21;
+			position: relative;
+			background: $dark no-repeat center;
+			background-size: cover;
+			.text {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				span,
+				button {
+					display: block;
+				}
+				span {
+					color: #FFCC21;
+					font-size: 25px;
+					text-transform: uppercase;
+					margin-bottom: 10px;
+					text-align: center;
+				}
+				button {
+					border: 0;
+					width: 160px;
+					background: #FF963C;
+					color: $light;
+					padding: 4px;
+					margin: auto;
+				}
+			}
+		}
+	}
+	
+	.body-record,
+	.exercise {
+		margin-bottom: 56px;
+		background: $dark;
+		color: $light;
+		padding: 16px 24px;
+	} 
+	
+	.exercise {
+		.list {
+			height: 190px;
+			overflow: auto;
+			padding-right: 24px;
+			div.grid-row {
+				grid-gap: 8px 40px;
+			}
+			.item {
+				padding: 0 0 8px 24px;
+				position: relative;
+				border-bottom: 1px solid #777;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 6px;;
+					left: 0;
+					display: block;
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: $light;
+				}
+				.name,
+				.burn {
+					font-size: 15px;
+				}
+				time,
+				.burn {
+					color: #FFCC21;
+				}
+				time {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	
+	.diary {
+		.item {
+			border: 2px solid #707070;
+			padding: 16px;
+			h4 {
+				font-size: 18px;
+				margin-bottom: 8px;
+			}
+			p {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
 .product-page {
-	padding: 56px 0 0;
 	.filter {
 		grid-gap: 32px;
 		margin-bottom: 56px;

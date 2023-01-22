@@ -20,8 +20,15 @@ const render = {
 		app.appendChild(await block.default());
 		document.querySelector('main').appendChild(app);
 		app.appendChild(page_footer());
+	},
+	async about() {
+		let block = await import('./pages/about_page.js');
+		app.appendChild(await block.default());
+		document.querySelector('main').appendChild(app);
+		app.appendChild(page_footer());
 	}
 }
 
 if (location.pathname == '/') render.home();
 if (location.pathname == '/product') render.product();
+if (location.pathname == '/my-record') render.about();

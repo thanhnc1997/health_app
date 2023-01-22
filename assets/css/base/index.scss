@@ -18,6 +18,16 @@ $warning: #f7af2c;
 	line-height: 1.4;
 	box-sizing: border-box;
 	-webkit-tap-highlight-color: transparent;
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+	&::-webkit-scrollbar-track {
+		background: #777;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: #FFCC21;
+		border-radius: 10px;
+	}
 }
 html,
 body {
@@ -26,16 +36,6 @@ body {
 	line-height: 1.4;
 	letter-spacing: 1px;
 	color: $dark;
-	&::-webkit-scrollbar {
-		width: 5px;
-	}
-	&::-webkit-scrollbar-track {
-		background: transparent;
-	}
-	&::-webkit-scrollbar-thumb {
-		background: $grey1;
-		border-radius: 0;
-	}
 }
 h1,
 h2,
@@ -180,6 +180,10 @@ hr {
 
 .cursor-pointer {
 	cursor: pointer;
+}
+
+.bg-dark {
+	background: $dark;
 }
 
 .title {

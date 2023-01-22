@@ -107,7 +107,6 @@ async function home_page(params = {}) {
 	}
 	
 	async function load_chart() {
-
 		const labels = [1, 2, 3, 4, 5, 6, 7];
 		const data = {
 			labels: labels,

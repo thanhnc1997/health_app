@@ -7,7 +7,7 @@ import {
 async function category_page(params = {}) {
 	let template = create_element('section'),
 			template_inner = create_element('div');
-	template.classList.add('product-page');
+	template.classList.add('product-page', 'page');
 	template_inner.classList.add('container');
 	
 	const products = [
@@ -72,7 +72,7 @@ async function category_page(params = {}) {
 		<div class="tab-content grid-row four-column-md mb-30">
 			
 		</div>
-		<a href="#" class="btn">記録をもっと見る</a>
+		<a href="#" class="btn" style="margin-bottom: 0;">記録をもっと見る</a>
 		`;
 		
 		return div;
