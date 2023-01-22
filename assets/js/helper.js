@@ -112,7 +112,36 @@ let render_icon = {
 			<path fill-rule="evenodd" clip-rule="evenodd" d="M34 4.04639C31.7853 4.04639 29.9036 2.30713 29.9036 0H4.14856C4.14856 2.30396 2.21631 4.04639 0 4.04639V6.66712H34V4.04639ZM1.70044 9.99988L6.90674 40H27.2008L32.3013 9.99988H1.70044ZM28.2861 13.3264L27.1519 20H6.95397L5.81981 13.3264H28.2861ZM9.78723 36.6672L8.6532 30.0001H25.4528L24.3203 36.6672H9.78723Z" fill="white"/>
 		</svg>
 		`;
+	},
+	carret_up(params = {}) {
+		return `
+		<svg width="${params.width || 0}" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M14.5853 9.04198L8.00029 2.65788L1.41525 9.04198L0.539062 8.19253L8.0003 0.958984L15.4615 8.19253L14.5853 9.04198Z" fill="#777777"/>
+		</svg>
+		`;
 	}
+}
+
+function scroll_to_top() {
+	let div = create_element('button');
+	div.classList.add('scroll-to-top');
+	div.innerHTML = render_icon.carret_up({width: 16});
+	
+	div.addEventListener('click', (e) => {
+		e.preventDefault;
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	});
+	
+	window.addEventListener('scroll', () => {
+		if (pageYOffset > 80) {
+			div.style.cssText = 'opacity: 1';
+		}
+		else {
+			div.style.cssText = 'opacity: 0';
+		}
+	});
+	
+	return div;
 }
 
 export {
@@ -120,5 +149,6 @@ export {
 	toast,
 	loader,
 	render_icon,
-	change_currency
+	change_currency,
+	scroll_to_top
 }

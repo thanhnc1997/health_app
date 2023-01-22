@@ -1,5 +1,6 @@
 import {
-	create_element
+	create_element,
+	scroll_to_top
 } from './helper.js';
 import page_header from './components/page_header.js';
 import page_footer from './components/page_footer.js';
@@ -7,6 +8,7 @@ import page_footer from './components/page_footer.js';
 let app = create_element('div');
 app.setAttribute('id', 'main');
 app.appendChild(page_header());
+document.body.appendChild(scroll_to_top());
 
 const render = {
 	async home() {
