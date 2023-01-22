@@ -48,9 +48,8 @@ async function home_page(params = {}) {
 		div.classList.add('section-banner');
 		div.innerHTML = `
 		<div class="grid-row banner-row">
-			<figure class="left">
-				<div style="background-image: url(assets/images/main_photo.png)"></div>
-				<figcaption><img src="assets/images/main_photo_text.png"></figcaption>	
+			<figure class="left" style="background-image: url(assets/images/main_photo.png)">
+				<div><img src="assets/images/main_photo_text.png"></div>	
 			</figure>
 			<div class="right">
 				<canvas id="home_chart"></canvas>
@@ -115,13 +114,13 @@ async function home_page(params = {}) {
 			datasets: [
 				{
 					data: [65, 59, 80, 81, 56, 55, 40],
-					borderColor: '#1266f1',
-          backgroundColor: '#1266f1',
+					borderColor: '#8FE9D0',
+          backgroundColor: '#8FE9D0',
 				},
 				{
 					data: [25, 49, 180, 41, 26, 55, 60],
-					borderColor: '#f93154',
-          backgroundColor: '#f93154',
+					borderColor: '#FFCC21',
+          backgroundColor: '#FFCC21',
 				}
 			]
 		};

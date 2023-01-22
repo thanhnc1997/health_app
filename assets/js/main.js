@@ -15,14 +15,8 @@ const render = {
 		document.querySelector('main').appendChild(app);
 		app.appendChild(page_footer());
 	},
-	async about() {
-		let block = await import('./pages/about_page.js');
-		app.appendChild(await block.default());
-		document.querySelector('main').appendChild(app);
-		app.appendChild(page_footer());
-	},
-	async category() {
-		let block = await import('./pages/category_page.js');
+	async product() {
+		let block = await import('./pages/product_page.js');
 		app.appendChild(await block.default());
 		document.querySelector('main').appendChild(app);
 		app.appendChild(page_footer());
@@ -30,5 +24,4 @@ const render = {
 }
 
 if (location.pathname == '/') render.home();
-if (location.pathname == '/about') render.about();
-if (location.pathname == '/c') render.category();
+if (location.pathname == '/product') render.product();

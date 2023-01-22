@@ -319,24 +319,24 @@ hr {
 	}
 	
 	&.banner-row {
-		align-items: self-start;
+		align-items: stretch;
 		position: relative;
 		@media (min-width: 1024px) {
 			grid-template: auto / 40% 1fr;
 		}
-		.left div {
-			padding-top: calc(3 / 5 * 100%);
+		.left {
 			background: top center no-repeat;
 			background-size: cover;
-		}
-		.left {
 			position: relative;
-			figcaption {
+			> div {
 				position: absolute;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
 			}
+		}
+		.right {
+			padding: 10px;
 		}
 	}
 }
@@ -401,6 +401,6 @@ hr {
 		color: $light;
 		font-size: 11px;
 		display: inline-block;
-		margin: 0 22px;
+		margin: 0 46px 0 0;
 	}
 }
